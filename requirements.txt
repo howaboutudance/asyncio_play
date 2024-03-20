@@ -1,0 +1,7 @@
+wheel
+pytest
+pytest-asyncio
+tox
+ipdb
+ruff
+isort
