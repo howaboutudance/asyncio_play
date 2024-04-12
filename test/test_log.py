@@ -3,7 +3,7 @@ from unittest.mock import patch, Mock
 
 import pytest
 
-from asyncio_semaphore_play import log
+from asyncio_play import log
 
 @pytest.mark.parametrize(
         ["m_file_path", "expected_class"],
@@ -18,7 +18,7 @@ def test_setup_func_exception_log_handler_file_handler(m_file_path, expected_cla
     m_func_name = "test_func"
     m_format_str = "%(asctime)s - %(name)s: %(funcName)s - %(levelname)s - %(message)s"
 
-    with patch("asyncio_semaphore_play.log.FuncNameExceptionFilter", autospec=True) as m_func_name_filter:
+    with patch("asyncio_play.log.FuncNameExceptionFilter", autospec=True) as m_func_name_filter:
         # Setup handler and check that it is the correct class
         handler = log.setup_func_exception_log_handler(m_func_name, m_file_path, m_log_level, m_format_str)
         assert isinstance(handler, expected_class)
