@@ -38,18 +38,18 @@ def test_func_name_exception_filter():
 
     # Test that the filter returns True when the record has the correct funcName and level
     filter = log.FuncNameExceptionFilter(m_func_name, m_log_level)
-    assert filter.filter(m_record) == True
+    assert filter.filter(m_record)
 
     # Test that the filter returns False when the record has the correct funcName but the wrong level
     m_record.levelno = logging.DEBUG
-    assert filter.filter(m_record) == False
+    assert not filter.filter(m_record)
 
     # Test that the filter returns False when the record has the wrong funcName but the correct level
     m_record.funcName = "wrong_func"
     m_record.levelno = m_log_level
-    assert filter.filter(m_record) == False
+    assert not filter.filter(m_record)
 
     # Test that the filter returns False when the record has the wrong funcName and the wrong level
     m_record.funcName = "wrong_func"
     m_record.levelno = logging.DEBUG
-    assert filter.filter(m_record) == False
+    assert not filter.filter(m_record)
