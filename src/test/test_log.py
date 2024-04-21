@@ -1,9 +1,10 @@
 import logging
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
 
 import pytest
 
-from asyncio_semaphore_play import log
+from asyncio_play import log
+
 
 @pytest.mark.parametrize(
         ["m_file_path", "expected_class"],
@@ -18,7 +19,7 @@ def test_setup_func_exception_log_handler_file_handler(m_file_path, expected_cla
     m_func_name = "test_func"
     m_format_str = "%(asctime)s - %(name)s: %(funcName)s - %(levelname)s - %(message)s"
 
-    with patch("asyncio_semaphore_play.log.FuncNameExceptionFilter", autospec=True) as m_func_name_filter:
+    with patch("asyncio_play.log.FuncNameExceptionFilter", autospec=True) as m_func_name_filter:
         # Setup handler and check that it is the correct class
         handler = log.setup_func_exception_log_handler(m_func_name, m_file_path, m_log_level, m_format_str)
         assert isinstance(handler, expected_class)
@@ -38,18 +39,18 @@ def test_func_name_exception_filter():
 
     # Test that the filter returns True when the record has the correct funcName and level
     filter = log.FuncNameExceptionFilter(m_func_name, m_log_level)
-    assert filter.filter(m_record) == True
+    assert filter.filter(m_record)
 
     # Test that the filter returns False when the record has the correct funcName but the wrong level
     m_record.levelno = logging.DEBUG
-    assert filter.filter(m_record) == False
+    assert not filter.filter(m_record)
 
     # Test that the filter returns False when the record has the wrong funcName but the correct level
     m_record.funcName = "wrong_func"
     m_record.levelno = m_log_level
-    assert filter.filter(m_record) == False
+    assert not filter.filter(m_record)
 
     # Test that the filter returns False when the record has the wrong funcName and the wrong level
     m_record.funcName = "wrong_func"
     m_record.levelno = logging.DEBUG
-    assert filter.filter(m_record) == False
+    assert not filter.filter(m_record)

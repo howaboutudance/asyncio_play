@@ -1,6 +1,5 @@
 """Logging utilities for package."""
 import logging
-
 from pathlib import Path
 
 
