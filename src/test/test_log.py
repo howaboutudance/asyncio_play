@@ -1,9 +1,10 @@
 import logging
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
 
 import pytest
 
 from asyncio_play import log
+
 
 @pytest.mark.parametrize(
         ["m_file_path", "expected_class"],

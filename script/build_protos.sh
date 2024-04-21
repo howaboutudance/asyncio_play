@@ -5,7 +5,7 @@ cd ./protos
 
 # Directory paths
 proto_dir="./activitypub_service"
-output_dir="../activitypub_service"
+output_dir="../src/activitypub_service"
 
 # Check if output directory exists, create if needed
 if [ ! -d "$output_dir" ]; then

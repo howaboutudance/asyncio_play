@@ -2,6 +2,7 @@
 
 from asyncio_play import event_parsing
 
+
 # write a test that can parse a simple event into an object
 def test_json_to_event_obj(event_fixture):
     """Test that the json_to_event_obj function can parse a simple event."""
