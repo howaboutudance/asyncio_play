@@ -1,0 +1,16 @@
+{
+    "name": "asyncio-play",
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "ms-python.python",
+        "blinkshellinc.blink-fs",
+        "vscodevim.vim"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "forwardPorts": [
+        3000
+    ],
+    "postCreateCommand": "echo 'Codespace created!'"
+}
