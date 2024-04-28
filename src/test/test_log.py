@@ -7,11 +7,8 @@ from asyncio_play import log
 
 
 @pytest.mark.parametrize(
-        ["m_file_path", "expected_class"],
-        [
-            [None, logging.StreamHandler],
-            ["test.log", logging.FileHandler]
-        ]
+    ["m_file_path", "expected_class"],
+    [[None, logging.StreamHandler], ["test.log", logging.FileHandler]],
 )
 def test_setup_func_exception_log_handler_file_handler(m_file_path, expected_class):
     """Test that the setup_func_exception_log_handler function returns the correct handler."""
@@ -19,9 +16,13 @@ def test_setup_func_exception_log_handler_file_handler(m_file_path, expected_cla
     m_func_name = "test_func"
     m_format_str = "%(asctime)s - %(name)s: %(funcName)s - %(levelname)s - %(message)s"
 
-    with patch("asyncio_play.log.FuncNameExceptionFilter", autospec=True) as m_func_name_filter:
+    with patch(
+        "asyncio_play.log.FuncNameExceptionFilter", autospec=True
+    ) as m_func_name_filter:
         # Setup handler and check that it is the correct class
-        handler = log.setup_func_exception_log_handler(m_func_name, m_file_path, m_log_level, m_format_str)
+        handler = log.setup_func_exception_log_handler(
+            m_func_name, m_file_path, m_log_level, m_format_str
+        )
         assert isinstance(handler, expected_class)
 
         # Check that handler has correct level and format
@@ -30,6 +31,7 @@ def test_setup_func_exception_log_handler_file_handler(m_file_path, expected_cla
 
         # Make sure the filter was added to the handler
         m_func_name_filter.assert_called_once_with(m_func_name, m_log_level)
+
 
 def test_func_name_exception_filter():
     """Test that the FuncNameExceptionFilter filter works as expected."""
