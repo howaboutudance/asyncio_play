@@ -3,10 +3,10 @@ requires = ["setuptools", "wheel"]
 
 [metadata]
 name = "asyncio_play"
-version = "0.1.0"
+version = "0.2.0"
 description = "A project to play with asyncio"
 author = "Michael Penhallegon"
-author_email = "crimson@crimsonfae.net"
+author_email = "mike@hematite.tech"
 
 [options]
 python_requires = ">=3.8"
