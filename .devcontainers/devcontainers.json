@@ -10,6 +10,11 @@
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
+    "build": {
+        "docker": {
+            "dockerfile": "Dockerfile"
+        }
+    },
     "forwardPorts": [
         3000
     ],
