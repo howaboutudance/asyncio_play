@@ -1,0 +1,19 @@
+# Packaging libraries
+wheel
+
+# Application libraries
+grpcio
+grpcio-tools
+
+# Testing libraries
+pytest
+pytest-asyncio
+tox
+
+# Debugging libraries
+ipdb
+
+# Linting and formatting libraries
+isort
+black
+ruff

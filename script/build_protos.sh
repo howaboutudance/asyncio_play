@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -x
+
 # change working directory to protos
 cd ./protos
 

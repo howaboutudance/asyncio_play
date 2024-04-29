@@ -1,9 +1,0 @@
-wheel
-pytest
-pytest-asyncio
-tox
-ipdb
-ruff
-isort
-grpcio
-grpcio-tools

@@ -1,20 +1,37 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 
-[metadata]
+[project]
 name = "asyncio_play"
-version = "0.1.0"
+version = "0.2.0"
 description = "A project to play with asyncio"
-author = "Michael Penhallegon"
-author_email = "crimson@crimsonfae.net"
+authors = [
+    {name="Michael Penhallegon", email="mike@hematite.tech"}
+]
+dependencies = [
+    "grpcio",
+    "grpcio-tools"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-asyncio",
+    "tox"
+]
+debug = [
+    "ipdb"
+]
+linting = [
+    "isort",
+    "black",
+    "ruff"
+]
 
 [options]
 python_requires = ">=3.8"
-install_requires = ["asyncio >= 3.4"]
+install_requires = ["wheel", "asyncio >= 3.4"]
 
 [options.package.find]
 where="."
 exclude=["script", "protos"]
-
-[options.extras_require]
-dev = ["pytest >= 6.2"]
