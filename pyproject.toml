@@ -35,3 +35,7 @@ install_requires = ["wheel", "asyncio >= 3.4"]
 [options.package.find]
 where="."
 exclude=["script", "protos"]
+
+
+[tool.ruff]
+max_line_length = 120
