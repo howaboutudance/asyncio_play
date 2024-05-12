@@ -16,7 +16,7 @@
         }
     },
     "forwardPorts": [
-        3000
+        50051
     ],
     "postCreateCommand": "echo 'Codespace created!'"
 }
