@@ -1,6 +1,7 @@
 {
     "python.testing.pytestArgs": [
-        "."
+        ".", 
+        "-m not integration"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
