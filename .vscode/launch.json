@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Module",
+            "name": "Debug Server",
             "type": "debugpy",
             "request": "launch",
-            "module": "asyncio-play"
+            "module": "activitypub_event_server"
         }
     ]
 }

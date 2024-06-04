@@ -3,7 +3,9 @@
 import asyncio
 import logging
 from concurrent import futures
+
 from grpc import server as grpc_server
+
 from activitypub_event_server.protos import add_EventServiceServicer_to_server
 from activitypub_event_server.server import EventServiceService
 

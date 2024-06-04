@@ -36,8 +36,9 @@ install_requires = ["wheel", "asyncio >= 3.4"]
 where=["src"]
 exclude=["script", "protos"]
 
-[tools.ruff]
-max_line_length = 120
+[tool.ruff]
+line-length = 120
+exclude = ["protos/**.py", "src/activitypub_service/*.py"]
 
 [tools.pytest.ini_options]
 minversion = "6.0"
