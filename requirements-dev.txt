@@ -7,7 +7,7 @@ grpcio-tools
 
 # Testing libraries
 pytest
-pytest-asyncio
+# pytest-asyncio
 tox
 
 # Debugging libraries

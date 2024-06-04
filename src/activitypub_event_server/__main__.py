@@ -1,7 +1,7 @@
-import logging
 import asyncio
+import logging
 
-from asyncio_play.service import execute
+from activitypub_event_server.service import execute
 
 _log = logging.getLogger(__name__)
 

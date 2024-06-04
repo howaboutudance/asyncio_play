@@ -33,9 +33,15 @@ python_requires = ">=3.8"
 install_requires = ["wheel", "asyncio >= 3.4"]
 
 [options.package.find]
-where="."
+where=["src"]
 exclude=["script", "protos"]
 
-
 [tool.ruff]
-max_line_length = 120
+line-length = 120
+exclude = ["protos/**.py", "src/activitypub_service/*.py"]
+
+[tools.pytest.ini_options]
+minversion = "6.0"
+markers = [
+    "integration: mark a test as an integration test",
+]
