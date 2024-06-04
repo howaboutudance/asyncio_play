@@ -3,7 +3,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from asyncio_play import log
+from activitypub_event_server import log
 
 
 @pytest.mark.parametrize(
@@ -17,7 +17,7 @@ def test_setup_func_exception_log_handler_file_handler(m_file_path, expected_cla
     m_format_str = "%(asctime)s - %(name)s: %(funcName)s - %(levelname)s - %(message)s"
 
     with patch(
-        "asyncio_play.log.FuncNameExceptionFilter", autospec=True
+        "activitypub_event_server.log.FuncNameExceptionFilter", autospec=True
     ) as m_func_name_filter:
         # Setup handler and check that it is the correct class
         handler = log.setup_func_exception_log_handler(

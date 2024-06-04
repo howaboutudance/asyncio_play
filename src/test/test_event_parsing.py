@@ -1,6 +1,6 @@
 """Tests for activitypub event parsing."""
 
-from asyncio_play import event_parsing
+from activitypub_event_server import event_parsing
 
 
 # write a test that can parse a simple event into an object
